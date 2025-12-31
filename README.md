@@ -81,11 +81,15 @@ All models were trained using scikit-learn Pipelines, ensuring that preprocessin
 
 #### 📊 Results Summary
 Data Type	Best Model	RMSE ↓	MAE ↓	R² ↑
+
 Tabular Only	XGBoost	~105K	~63K	0.91
+
 Multimodal	XGBoost	~109K	~66K	0.90
 
 🔹 Tabular models performed slightly better overall
+
 🔹 Satellite imagery provided complementary spatial context but did not significantly outperform tabular-only models
+
 🔹 Grad-CAM visualizations revealed meaningful spatial patterns in high-value properties
 
 #### 🔍 Interpretability (Grad-CAM)
