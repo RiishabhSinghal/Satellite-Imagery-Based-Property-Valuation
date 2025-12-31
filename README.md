@@ -101,22 +101,30 @@ These visual cues align with real-world valuation factors
 #### 📁 Project Structure
 Satellite Imagery Based Property Valuation/
 │
+
 ├── data/
 │   ├── train_tabular.csv
+
 │   ├── test_tabular.csv
+
 │   ├── image_embeddings_train.csv
+
 │   └── image_embeddings_test.csv
 │
 
 ├── images/
 │   ├── train/
+
 │   └── test/
 │
 
 ├── notebooks/
 │   ├── EDA.ipynb
+
 │   ├── Image_Preprocessing.ipynb
+
 │   ├── Feature_Engineering.ipynb
+
 │   └── Model_Training.ipynb
 │
 
@@ -125,19 +133,55 @@ Satellite Imagery Based Property Valuation/
 │
 
 ├── final_submission.csv
+
 └── README.md
 
 #### 🚀 How to Run
 
-Run EDA notebook for data understanding
+The project is organized into three sequential stages, each implemented as a separate notebook/script.
+They must be run in the following order:
 
-Generate image embeddings using CNN
+1️⃣ Data Fetcher
 
-Apply PCA and merge with tabular data
+Runs the data fetching pipeline
 
-Train tabular and multimodal models
+Downloads satellite images for each property using their unique id
 
-Generate predictions and final submission file
+Stores images in structured train/test directories on Google Drive
+
+Run first to ensure all images are available for downstream steps.
+
+2️⃣ Preprocessing
+
+Performs tabular data cleaning and feature engineering
+
+Preprocesses satellite images
+
+Extracts CNN-based image embeddings
+
+Applies PCA to reduce image feature dimensionality
+
+Merges image features with tabular data using property id
+
+Saves processed datasets for modeling
+
+Run after the data fetcher.
+
+3️⃣ Model Training
+
+Trains multiple machine learning models on:
+
+Tabular data only
+
+Tabular + image (multimodal) data
+
+Evaluates performance using RMSE, MAE, and R²
+
+Selects the best-performing model
+
+Generates final price predictions and submission file
+
+Run last, once preprocessing is complete.
 
 #### 📌 Key Takeaways
 
