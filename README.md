@@ -142,8 +142,9 @@ Satellite Imagery Based Property Valuation/
 
 #### 🚀 How to Run
 
-The project is organized into three sequential stages, each implemented as a separate notebook/script.
-They must be run in the following order:
+The project is organized into three sequential stages, each implemented as a separate notebook/script. These stages must be executed in the order listed below, as each step depends on the outputs of the previous one.
+
+All intermediate and final datasets are saved in structured folders on Google Drive, and the notebooks are connected via file paths to access these saved files.
 
 1️⃣ Data Fetcher
 
