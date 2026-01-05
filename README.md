@@ -22,6 +22,56 @@ One satellite image per property
 
 Images aligned with tabular data using the same id
 
+
+#### 🚀 How to Run
+
+The project is organized into three sequential stages, each implemented as a separate notebook/script. These stages must be executed in the order listed below, as each step depends on the outputs of the previous one.
+
+All intermediate and final datasets are saved in structured folders on Google Drive, and the notebooks are connected via file paths to access these saved files.
+
+1️⃣ Data Fetcher
+
+Runs the data fetching pipeline
+
+Downloads satellite images for each property using their unique id
+
+Stores images in structured train/test directories on Google Drive
+
+Run first to ensure all images are available for downstream steps.
+
+2️⃣ Preprocessing
+
+Performs tabular data cleaning and feature engineering
+
+Preprocesses satellite images
+
+Extracts CNN-based image embeddings
+
+Applies PCA to reduce image feature dimensionality
+
+Merges image features with tabular data using property id
+
+Saves processed datasets for modeling
+
+Run after the data fetcher.
+
+3️⃣ Model Training
+
+Trains multiple machine learning models on:
+
+Tabular data only
+
+Tabular + image (multimodal) data
+
+Evaluates performance using RMSE, MAE, and R²
+
+Selects the best-performing model
+
+Generates final price predictions and submission file
+
+Run last, once preprocessing is complete.
+
+
 #### 🧠 Methodology
 1. Exploratory Data Analysis (EDA)
 
@@ -140,53 +190,6 @@ Satellite Imagery Based Property Valuation/
 
 └── README.md
 
-#### 🚀 How to Run
-
-The project is organized into three sequential stages, each implemented as a separate notebook/script. These stages must be executed in the order listed below, as each step depends on the outputs of the previous one.
-
-All intermediate and final datasets are saved in structured folders on Google Drive, and the notebooks are connected via file paths to access these saved files.
-
-1️⃣ Data Fetcher
-
-Runs the data fetching pipeline
-
-Downloads satellite images for each property using their unique id
-
-Stores images in structured train/test directories on Google Drive
-
-Run first to ensure all images are available for downstream steps.
-
-2️⃣ Preprocessing
-
-Performs tabular data cleaning and feature engineering
-
-Preprocesses satellite images
-
-Extracts CNN-based image embeddings
-
-Applies PCA to reduce image feature dimensionality
-
-Merges image features with tabular data using property id
-
-Saves processed datasets for modeling
-
-Run after the data fetcher.
-
-3️⃣ Model Training
-
-Trains multiple machine learning models on:
-
-Tabular data only
-
-Tabular + image (multimodal) data
-
-Evaluates performance using RMSE, MAE, and R²
-
-Selects the best-performing model
-
-Generates final price predictions and submission file
-
-Run last, once preprocessing is complete.
 
 #### 📌 Key Takeaways
 
